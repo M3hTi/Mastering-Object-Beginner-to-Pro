@@ -203,3 +203,57 @@ firstWorker.showWorkerInfo()
 
 
 
+
+
+
+// Getters and Setters (Advanced)
+class Temprature {
+    constructor(celsuis) {
+        this._celsuis = celsuis
+    }
+    get fahrenheit() {
+        return (this._celsuis * 9 / 5) + 32
+    }
+    set fahrenheit(value) {
+        this._celsuis = (value - 32) * 5 / 9
+    }
+}
+
+const temp = new Temprature(90);
+console.log(temp.fahrenheit);
+temp.fahrenheit = 127
+console.log(temp._celsuis);
+
+
+
+
+
+
+
+// Private Fields (Advanced, ES2022+)
+class HesabBanki {
+    #hesab = 0
+    constructor(meghdareAvalie) {
+        this.#hesab = meghdareAvalie
+    }
+    sepordeGozari(amount){
+        this.#hesab += amount
+        console.log(`sepordeGozari : ${amount} , mande hesab : ${this.#hesab}`);
+    }
+    bardashtan(amount){
+        if(amount > this.#hesab){
+            console.log(`mojodi hesab kafi nist`);
+        }else{
+            this.#hesab -= amount
+            console.log(`bardashtan : ${amount} , mande hesab : ${this.#hesab}`);
+        }
+    }
+    get hesab(){
+        return this.#hesab
+    }
+}
+
+const hesabeShakhsi = new HesabBanki(10000);
+hesabeShakhsi.sepordeGozari(500)
+hesabeShakhsi.bardashtan(200)
+console.log(hesabeShakhsi.hesab);
