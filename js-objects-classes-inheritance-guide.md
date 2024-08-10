@@ -1,7 +1,6 @@
 # JavaScript Objects, Classes, and Inheritance: A Comprehensive Guide
 
 ## Table of Contents
-
 1. [Objects (Beginner Level)](#1-objects-beginner-level)
 2. [Object Methods and 'this' keyword](#2-object-methods-and-this-keyword)
 3. [Constructor Functions](#3-constructor-functions)
@@ -215,7 +214,6 @@ Dog.prototype.constructor = Dog;
 ```
 
 These lines ensure:
-
 1. `Dog` instances inherit methods and properties from `Animal.prototype`.
 2. The correct prototype chain for inheritance checks (like `instanceof`).
 3. The `constructor` property points correctly to `Dog`.
@@ -243,7 +241,6 @@ myCar.start(); // Outputs: "Toyota Corolla is starting."
 ```
 
 In this example:
-
 - `this.make = make` and `this.model = model` set properties on the new object.
 - `this.start = function() {...}` adds a method to the object.
 - Inside the `start` method, `this` still refers to the object, so `this.isRunning = true` updates the object's state.
@@ -273,7 +270,7 @@ circle.diameter = 20;
 console.log(circle._radius); // 10
 ```
 
-### Key Points
+### Key Points:
 
 1. The underscore (`_`) in `this._radius` is a convention to indicate that this property is intended to be private or internal to the class.
 
@@ -282,7 +279,6 @@ console.log(circle._radius); // 10
 3. Setters are defined with the `set` keyword and take exactly one parameter.
 
 4. You use getters and setters as if they were properties, not methods:
-
    ```javascript
    console.log(circle.diameter); // Using the getter
    circle.diameter = 20; // Using the setter
@@ -293,7 +289,7 @@ console.log(circle._radius); // 10
    - You can validate or modify the data before it's set or returned.
    - You can compute values on-the-fly instead of storing them.
 
-### Additional Example
+### Additional Example:
 
 ```javascript
 class Temperature {
@@ -341,7 +337,7 @@ console.log(counter.value); // 1
 // console.log(counter.#count); // SyntaxError
 ```
 
-### Key Points
+### Key Points:
 
 1. Private fields are only accessible within the class they're defined in.
 
@@ -351,7 +347,7 @@ console.log(counter.value); // 1
 
 4. Private fields can be used without a constructor if you're initializing them with a default value.
 
-### More Examples
+### More Examples:
 
 Example 1: Private field with constructor
 
@@ -422,7 +418,7 @@ console.log(myCircle.description); // "A red circle with radius 7"
 // myCircle.#radius = 10; // SyntaxError
 ```
 
-### Benefits of Private Fields
+### Benefits of Private Fields:
 
 1. Encapsulation: They help in hiding the internal details of a class.
 2. Name collisions: They prevent accidental name collisions with methods or properties.
